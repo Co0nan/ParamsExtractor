@@ -96,7 +96,6 @@ class BurpExtender(IBurpExtender, IScannerCheck, ITab):
 		ret = chooseFile.showDialog(self.logPane, "Choose file")
 		filename = chooseFile.getSelectedFile().getCanonicalPath()
 		print("\n" + "Export to : " + filename)
-		self.outputTxtArea.sort()
 		open(filename, 'w', 0).write(self.outputTxtArea.text)
 
 	def doPassiveScan(self, baseRequestResponse):
